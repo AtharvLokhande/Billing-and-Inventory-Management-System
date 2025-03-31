@@ -8,7 +8,7 @@ public class BillingAndInventryMgmtSystemApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BillingAndInventryMgmtSystemApplication.class, args);
-//coment
+//coment  added
 	}
 
 }
