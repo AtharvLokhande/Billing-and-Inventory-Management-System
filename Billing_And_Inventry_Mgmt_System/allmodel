@@ -1,0 +1,275 @@
+package com.example.demo.model;
+
+import lombok.*;
+
+import java.sql.Timestamp;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Complaint {
+    private Integer complaintId;
+    private Integer customerId;
+    private Integer productId;
+    private String description;
+    private ComplaintStatus status;
+    private Timestamp createdAt;
+}
+
+
+package com.example.demo.model;
+
+public enum ComplaintStatus {
+    Open, Resolved
+}
+
+package com.example.demo.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+
+public class EmployeeResponse {
+	
+	    private int userId;
+	    private String username;
+	    private String name;
+	    private String address;
+	    private String contact;
+	    private String email;
+	    private String organization;
+	    private String userroll;
+
+}
+
+package com.example.demo.model;
+
+import lombok.*;
+
+import java.sql.Timestamp;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Invoice {
+    private Integer invoiceId;
+    private Integer orderId;
+    private Float gst;
+    private Float additionalCharges;
+    private Double totalAmount;
+    private Double dueAmount;
+    private Timestamp issuedAt;
+}
+
+package com.example.demo.model;
+
+import lombok.*;
+
+import java.sql.Timestamp;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Order {
+    private Integer orderId;
+    private OrderType orderType;
+    private Integer customerId;
+    private Integer supplierId;
+    private OrderStatus orderStatus;
+    private Timestamp orderedAt;
+}
+
+package com.example.demo.model;
+
+import lombok.*;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class OrderedItem {
+    private Integer orderItemId;
+    private Integer orderId;
+    private Integer productId;
+    private Integer quantity;
+    private Double totalPrice;
+}
+
+package com.example.demo.model;
+
+public enum OrderStatus {
+    Pending, Shipped, Delivered
+}
+
+package com.example.demo.model;
+
+public enum OrderType {
+    Purchase, Sale
+}
+
+package com.example.demo.model;
+
+import lombok.*;
+
+import java.sql.Timestamp;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Payment {
+    private Integer paymentId;
+    private Integer invoiceId;
+    private Double amountPaid;
+    private PaymentStatus paymentStatus;
+    private PaymentMode paymentMode;
+    private Timestamp paidAt;
+}
+
+package com.example.demo.model;
+
+public enum PaymentMode {
+    Cash, Card, UPI, BankTransfer
+}
+
+package com.example.demo.model;
+
+public enum PaymentStatus {
+    Pending, Paid
+}
+
+package com.example.demo.model;
+
+import lombok.*;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Product {
+    private Integer productId;
+    private String name;
+    private Integer supplierId;
+    private Integer quantity;
+    private Double price;
+    private Float gstPercentage;
+    private String description;
+    private String brand;
+    private String category;
+}
+
+package com.example.demo.model;
+
+import lombok.*;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Profile {
+    private Integer profileId;
+    private Integer userId;
+    private String name;
+    private String address;
+    private String contact;
+    private String email;
+    private String organization;
+    private String designation;
+}
+
+package com.example.demo.model;
+
+import lombok.*;
+
+import java.sql.Timestamp;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Record {
+    private Integer recordId;
+    private Integer userId;
+    private Integer orderId;
+    private Integer paymentId;
+    private String name;
+    private String address;
+    private String contact;
+    private String email;
+    private String organization;
+    private String designation;
+    private OrderType orderType;
+    private Double amountPaid;
+    private Timestamp recordedAt;
+}
+
+package com.example.demo.model;
+
+import lombok.*;
+import java.sql.Timestamp;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class User {
+    private Integer userId;
+    private UserRole userRoll;
+    private String username;
+    private String password;
+    private Timestamp createdAt;
+}
+
+package com.example.demo.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+
+
+public class UserRegistrationRequest {
+
+    private String name;
+    private String address;
+    private String email;
+    private String contact;
+    private String username;
+    private String password;
+    private String userRoll;
+    private String organization;
+    private String designation;
+    
+    @Override
+    public String toString() {
+        return "UserRegistrationRequest{" +
+                "username='" + username + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", contact='" + contact + '\'' +
+                '}';
+    }
+
+
+   }
+
+   package com.example.demo.model;
+
+public enum UserRole {
+    Master, Admin, Employee, Customer, Supplier
+}
+   
